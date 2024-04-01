@@ -9,6 +9,7 @@ function Login() {
         myname:'varun',myemail:'varun@gmail.com',mypass:'varunpass'
         
     })
+   // const [userecored,setuserecords]=useState([])
     let handchange=(eve)=>{
         setdata(
             {...logindata,[eve.target.name]:eve.target.value}
@@ -24,10 +25,18 @@ function Login() {
     let handychange=(ev)=>{
      ev.preventDefault()
      console.log(logindata)
-
+// const newrecord ={...logindata}
+       // for empty input
+       // setdata({myname:'',myemail:'',mypass:''})
      setData(
         {...data,isLoggedIn:true,userData:logindata}
+        
     )
+       // (for print data below)................................
+       // const record={...(logindata,id:new Date().getTime().tostring}
+// console.log (userecored)
+       // setuserecords ([...userecored, record])
+       // .................................................
       navigate('/profile')
     }
     return (
